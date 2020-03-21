@@ -9,6 +9,7 @@ module.exports = {
                 const $ = cheerio.load(response.data)
                 // Create response object consisting of JSON made from a parsed table found at above site
                 const responseObject = {
+                    urlCrawled: 'https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html',
                     // This key is updated if data validation fails
                     dataIntegrity: {
                         status: 'good',
@@ -18,64 +19,64 @@ module.exports = {
                     provinces: [
                         {
                             name: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(1) > td:nth-child(1)').html(),
-                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(1) > td:nth-child(2)').html())
+                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(1) > td:nth-child(2)').html().replace(',',''))
                         },
                         {
                             name: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(2) > td:nth-child(1)').html(),
-                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(2) > td:nth-child(2)').html())
+                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(2) > td:nth-child(2)').html().replace(',',''))
                         },
                         {
                             name: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(3) > td:nth-child(1)').html(),
-                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(3) > td:nth-child(2)').html())
+                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(3) > td:nth-child(2)').html().replace(',',''))
                         },
                         {
                             name: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(4) > td:nth-child(1)').html(),
-                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(4) > td:nth-child(2)').html())
+                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(4) > td:nth-child(2)').html().replace(',',''))
                         },
                         {
                             name: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(5) > td:nth-child(1)').html(),
-                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(5) > td:nth-child(2)').html())
+                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(5) > td:nth-child(2)').html().replace(',',''))
                         },
                         {
                             name: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(6) > td:nth-child(1)').html(),
-                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(6) > td:nth-child(2)').html())
+                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(6) > td:nth-child(2)').html().replace(',',''))
                         },
                         {
                             name: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(7) > td:nth-child(1)').html(),
-                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(7) > td:nth-child(2)').html())
+                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(7) > td:nth-child(2)').html().replace(',',''))
                         },
                         {
                             name: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(8) > td:nth-child(1)').html(),
-                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(8) > td:nth-child(2)').html())
+                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(8) > td:nth-child(2)').html().replace(',',''))
                         },
                         {
                             name: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(9) > td:nth-child(1)').html(),
-                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(9) > td:nth-child(2)').html())
+                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(9) > td:nth-child(2)').html().replace(',',''))
                         },
                         {
                             name: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(10) > td:nth-child(1)').html(),
-                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(10) > td:nth-child(2)').html())
+                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(10) > td:nth-child(2)').html().replace(',',''))
                         },
                         {
                             name: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(11) > td:nth-child(1)').html(),
-                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(11) > td:nth-child(2)').html())
+                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(11) > td:nth-child(2)').html().replace(',',''))
                         },
                         {
                             name: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(12) > td:nth-child(1)').html(),
-                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(12) > td:nth-child(2)').html())
+                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(12) > td:nth-child(2)').html().replace(',',''))
                         },
                         {
                             name: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(13) > td:nth-child(1)').html(),
-                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(13) > td:nth-child(2)').html())
+                            cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(13) > td:nth-child(2)').html().replace(',',''))
                         }
                     ],
                     misc: {
                         category: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(14) > td:nth-child(1)').html(),
-                        cases:  parseInt($('.table-bordered > tbody > tr:nth-child(14) > td:nth-child(2)').html())
+                        cases:  parseInt($('.table-bordered > tbody > tr:nth-child(14) > td:nth-child(2)').html().replace(',',''))
                     },
                     totals: {
                         totalText: $('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(15) > td:nth-child(1) > strong').html(),
-                        cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(15) > td:nth-child(2) > strong').html())
+                        cases:  parseInt($('body > main > div:nth-child(3) > table.table.table-striped.table-bordered > tbody > tr:nth-child(15) > td:nth-child(2) > strong').html().replace(',',''))
                     },
                 }
                 return responseObject;
